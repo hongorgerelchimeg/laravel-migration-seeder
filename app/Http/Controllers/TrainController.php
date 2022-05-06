@@ -14,7 +14,8 @@ class TrainController extends Controller
      */
     public function index()
     {
-        $trains = Train::all();
+        $trains = Train::paginate(50);
+        // dd($trains);
         return view('listing', ['trains' => $trains] );
     }
 
